@@ -2,7 +2,7 @@ import TikTokScraper from 'tiktok-scraper';
 
 export default async function handler(req, res) {
   const { username } = req.query;
-  if(!username) return res.status(400).json({ error: "Username TikTok dibutuhkan" });
+  if (!username) return res.status(400).json({ error: "Username TikTok dibutuhkan" });
 
   try {
     const user = await TikTokScraper.getUserProfileInfo(username);
@@ -15,7 +15,8 @@ export default async function handler(req, res) {
       bio: user.user.signature,
       profile_url: `https://www.tiktok.com/@${user.user.uniqueId}`
     });
-  } catch(err) {
+  } catch (err) {
+    console.error(err);
     res.status(500).json({ error: "Gagal mengambil data user" });
   }
 }
