@@ -1,21 +1,21 @@
-import axios from "axios";
+import TikTokScraper from 'tiktok-scraper';
 
 export default async function handler(req, res) {
   const { username } = req.query;
-  if(!username) return res.status(400).json({error: "Username TikTok dibutuhkan"});
+  if(!username) return res.status(400).json({ error: "Username TikTok dibutuhkan" });
+
   try {
-    const response = await axios.get(`https://api.tiktokdl.com/stalker?username=${username}`);
-    const user = response.data.user;
+    const user = await TikTokScraper.getUserProfileInfo(username);
     res.status(200).json({
-      username: user.username,
-      user_id: user.id,
-      followers: user.followers,
-      following: user.following,
-      likes: user.likes,
-      bio: user.bio,
-      profile_url: `https://www.tiktok.com/@${user.username}`
+      username: user.user.uniqueId,
+      user_id: user.user.id,
+      followers: user.user.fans,
+      following: user.user.following,
+      likes: user.user.heart,
+      bio: user.user.signature,
+      profile_url: `https://www.tiktok.com/@${user.user.uniqueId}`
     });
   } catch(err) {
-    res.status(500).json({error: "Gagal mengambil data user"});
+    res.status(500).json({ error: "Gagal mengambil data user" });
   }
 }
