@@ -2,7 +2,7 @@ import TikTokScraper from 'tiktok-scraper';
 
 export default async function handler(req, res) {
   const { username } = req.query;
-  if(!username) return res.status(400).json({ error: "Username TikTok dibutuhkan" });
+  if (!username) return res.status(400).json({ error: "Username TikTok dibutuhkan" });
 
   try {
     const posts = await TikTokScraper.user(username, { number: 10 });
@@ -12,7 +12,8 @@ export default async function handler(req, res) {
       url: p.webVideoUrl
     }));
     res.status(200).json({ posts: result });
-  } catch(err) {
+  } catch (err) {
+    console.error(err);
     res.status(500).json({ error: "Gagal mengambil postingan user" });
   }
 }
