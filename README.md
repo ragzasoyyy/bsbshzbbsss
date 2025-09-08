@@ -9,7 +9,7 @@
 - Real-time response
 - Docs interaktif premium
 
-## Install & Deploy
+## Deploy Vercel
 1. Clone repo:
    git clone <repo-url>
 2. Install dependencies:
@@ -27,4 +27,4 @@
 - Gunakan HTTPS
 - Tambahkan API key pribadi untuk keamanan
 - Batasi rate-limit agar tidak diblokir TikTok
-- Integrasikan dengan bot WA/Telegram atau aplikasi mobile
+- Integrasikan dengan bot WA/Telegram atau aplikasi mobile- Integrasikan dengan bot WA/Telegram atau aplikasi mobile
