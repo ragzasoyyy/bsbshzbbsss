@@ -1,12 +1,12 @@
 {
   "name": "tiktok-api",
   "version": "1.0.0",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "vercel dev"
   },
   "dependencies": {
+    "tiktok-scraper": "^1.4.28",
     "express": "^4.18.2",
     "axios": "^1.6.0"
   }
