@@ -1,192 +1,191 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TikTok API Docs Premium</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0f0f1a;
-      color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok API Docs Premium</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f0f1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
 
-    header {
-      background: linear-gradient(90deg, #ff004c, #2b00ff);
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    header h1 { margin: 0; font-size: 2.2rem; color: #fff; }
-    header p { margin: 0.5rem 0 0; font-size: 1rem; color: #eee; }
+  header {
+    background: linear-gradient(90deg, #ff004c, #2b00ff);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  }
+  header h1 { margin: 0; font-size: 2.2rem; color: #fff; }
+  header p { margin: 0.5rem 0 0; font-size: 1rem; color: #eee; }
 
-    main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-    section { margin-bottom: 2rem; background: #1a1a2e; padding: 1.5rem; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
-    h2 { color: #ff69b4; margin-top: 0; }
+  main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+  section { margin-bottom: 2rem; background: #1a1a2e; padding: 1.5rem; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.5); }
+  h2 { color: #ff69b4; margin-top: 0; }
 
-    input { padding: 0.5rem 1rem; border-radius: 8px; border: none; width: 60%; }
-    button { padding: 0.5rem 1rem; border-radius: 8px; border: none; margin-left: 0.5rem; background: #ff004c; color: #fff; cursor: pointer; transition: 0.3s; }
-    button:hover { background: #ff3377; }
+  input { padding: 0.5rem 1rem; border-radius: 8px; border: none; width: 60%; }
+  button { padding: 0.5rem 1rem; border-radius: 8px; border: none; margin-left: 0.5rem; background: #ff004c; color: #fff; cursor: pointer; transition: 0.3s; }
+  button:hover { background: #ff3377; }
 
-    .response-container { margin-top: 1rem; }
-    .response-card { background: #111; border-left: 5px solid #ff69b4; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; animation: fadeIn 0.3s; }
-    .response-field { margin: 0.2rem 0; }
-    .field-key { color: #1e90ff; font-weight: bold; }
-    .field-value { color: #f0f0f0; }
-    .field-string { color: #ffa500; }
-    .field-number { color: #32cd32; }
-    .field-url { color: #00ced1; text-decoration: underline; }
+  .response-container { margin-top: 1rem; }
+  .response-card { background: #111; border-left: 5px solid #ff69b4; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; animation: fadeIn 0.3s; }
+  .response-field { margin: 0.2rem 0; }
+  .field-key { color: #1e90ff; font-weight: bold; }
+  .field-value { color: #f0f0f0; }
+  .field-string { color: #ffa500; }
+  .field-number { color: #32cd32; }
+  .field-url { color: #00ced1; text-decoration: underline; }
 
-    .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.2); border-top-color: #ff004c; border-radius: 50%; animation: spin 1s linear infinite; margin-left: 1rem; vertical-align: middle; }
+  .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.2); border-top-color: #ff004c; border-radius: 50%; animation: spin 1s linear infinite; margin-left: 1rem; vertical-align: middle; }
 
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
-    .copy-btn { background: #1e90ff; margin-left: 0.5rem; font-size: 0.8rem; padding: 0.3rem 0.6rem; cursor: pointer; border-radius: 6px; }
-  </style>
+  .copy-btn { background: #1e90ff; margin-left: 0.5rem; font-size: 0.8rem; padding: 0.3rem 0.6rem; cursor: pointer; border-radius: 6px; }
+</style>
 </head>
 <body>
-  <header>
-    <h1>TikTok API Premium Interaktif</h1>
-    <p>Real-time TikTok API: Download, Search, Stalker, Comments & User Posts</p>
-  </header>
+<header>
+  <h1>TikTok API Premium Interaktif</h1>
+  <p>Real-time TikTok API: Download, Search, Stalker, Comments & User Posts</p>
+</header>
 
-  <main>
-    <!-- Section Template -->
-    <section id="downloadSection">
-      <h2>1. Download Video TikTok</h2>
-      <input type="text" id="downloadUrl" placeholder="Masukkan URL Video TikTok">
-      <button onclick="testDownload()">Test API</button>
-      <span id="downloadSpinner"></span>
-      <div class="response-container" id="downloadResult"></div>
-    </section>
+<main>
+<section id="downloadSection">
+  <h2>1. Download Video TikTok</h2>
+  <input type="text" id="downloadUrl" placeholder="Masukkan URL Video TikTok">
+  <button onclick="testDownload()">Test API</button>
+  <span id="downloadSpinner"></span>
+  <div class="response-container" id="downloadResult"></div>
+</section>
 
-    <section id="searchSection">
-      <h2>2. Search Video/Hashtag</h2>
-      <input type="text" id="searchQuery" placeholder="Masukkan keyword/hashtag">
-      <button onclick="testSearch()">Test API</button>
-      <span id="searchSpinner"></span>
-      <div class="response-container" id="searchResult"></div>
-    </section>
+<section id="searchSection">
+  <h2>2. Search Video/Hashtag</h2>
+  <input type="text" id="searchQuery" placeholder="Masukkan keyword/hashtag">
+  <button onclick="testSearch()">Test API</button>
+  <span id="searchSpinner"></span>
+  <div class="response-container" id="searchResult"></div>
+</section>
 
-    <section id="stalkerSection">
-      <h2>3. TikTok Stalker</h2>
-      <input type="text" id="stalkerUsername" placeholder="Masukkan username">
-      <button onclick="testStalker()">Test API</button>
-      <span id="stalkerSpinner"></span>
-      <div class="response-container" id="stalkerResult"></div>
-    </section>
+<section id="stalkerSection">
+  <h2>3. TikTok Stalker</h2>
+  <input type="text" id="stalkerUsername" placeholder="Masukkan username">
+  <button onclick="testStalker()">Test API</button>
+  <span id="stalkerSpinner"></span>
+  <div class="response-container" id="stalkerResult"></div>
+</section>
 
-    <section id="commentsSection">
-      <h2>4. Komentar Video</h2>
-      <input type="text" id="commentsVideoId" placeholder="Masukkan Video ID">
-      <button onclick="testComments()">Test API</button>
-      <span id="commentsSpinner"></span>
-      <div class="response-container" id="commentsResult"></div>
-    </section>
+<section id="commentsSection">
+  <h2>4. Komentar Video</h2>
+  <input type="text" id="commentsVideoId" placeholder="Masukkan Video ID">
+  <button onclick="testComments()">Test API</button>
+  <span id="commentsSpinner"></span>
+  <div class="response-container" id="commentsResult"></div>
+</section>
 
-    <section id="userPostsSection">
-      <h2>5. Postingan User</h2>
-      <input type="text" id="userPostsUsername" placeholder="Masukkan username">
-      <button onclick="testUserPosts()">Test API</button>
-      <span id="userPostsSpinner"></span>
-      <div class="response-container" id="userPostsResult"></div>
-    </section>
-  </main>
+<section id="userPostsSection">
+  <h2>5. Postingan User</h2>
+  <input type="text" id="userPostsUsername" placeholder="Masukkan username">
+  <button onclick="testUserPosts()">Test API</button>
+  <span id="userPostsSpinner"></span>
+  <div class="response-container" id="userPostsResult"></div>
+</section>
+</main>
 
-  <script>
-    const baseURL = "/api"; // Ganti dengan URL Vercel jika sudah deploy
+<script>
+const baseURL = "/api"; // endpoint folder api/
 
-    function createCard(key, value) {
-      let type = typeof value;
-      let className = 'field-value';
-      if (type === 'string' && value.startsWith('http')) className = 'field-url';
-      else if (type === 'string') className = 'field-string';
-      else if (type === 'number') className = 'field-number';
-      return `<div class="response-field"><span class="field-key">${key}:</span> <span class="${className}">${value}</span></div>`;
-    }
+function createCard(key, value) {
+  let type = typeof value;
+  let className = 'field-value';
+  if(type === 'string' && value.startsWith('http')) className = 'field-url';
+  else if(type === 'string') className = 'field-string';
+  else if(type === 'number') className = 'field-number';
+  return `<div class="response-field"><span class="field-key">${key}:</span> <span class="${className}">${value}</span></div>`;
+}
 
-    function renderResponse(containerId, data) {
-      const container = document.getElementById(containerId);
-      container.innerHTML = ''; // Clear previous
-      if (Array.isArray(data)) {
-        data.forEach(item => {
-          let html = '<div class="response-card">';
-          for (let key in item) html += createCard(key, item[key]);
-          html += `<button class="copy-btn" onclick="copyCard(this)">Copy JSON</button></div>`;
-          container.innerHTML += html;
-        });
-      } else {
-        let html = '<div class="response-card">';
-        for (let key in data) html += createCard(key, data[key]);
-        html += `<button class="copy-btn" onclick="copyCard(this)">Copy JSON</button></div>`;
-        container.innerHTML = html;
-      }
-    }
+function renderResponse(containerId, data) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  if(Array.isArray(data)) {
+    data.forEach(item => {
+      let html = '<div class="response-card">';
+      for(let key in item) html += createCard(key, item[key]);
+      html += `<button class="copy-btn" onclick="copyCard(this)">Copy JSON</button></div>`;
+      container.innerHTML += html;
+    });
+  } else {
+    let html = '<div class="response-card">';
+    for(let key in data) html += createCard(key, data[key]);
+    html += `<button class="copy-btn" onclick="copyCard(this)">Copy JSON</button></div>`;
+    container.innerHTML = html;
+  }
+}
 
-    function copyCard(btn) {
-      const card = btn.parentElement;
-      const fields = card.querySelectorAll('.response-field');
-      const obj = {};
-      fields.forEach(f => {
-        const key = f.querySelector('.field-key').textContent.replace(':','').trim();
-        const value = f.querySelector('.field-value, .field-string, .field-number, .field-url').textContent;
-        obj[key] = isNaN(value) ? value : Number(value);
-      });
-      navigator.clipboard.writeText(JSON.stringify(obj, null, 2));
-      btn.textContent = 'Copied!';
-      setTimeout(() => btn.textContent = 'Copy JSON', 1500);
-    }
+function copyCard(btn) {
+  const card = btn.parentElement;
+  const fields = card.querySelectorAll('.response-field');
+  const obj = {};
+  fields.forEach(f => {
+    const key = f.querySelector('.field-key').textContent.replace(':','').trim();
+    const value = f.querySelector('.field-value, .field-string, .field-number, .field-url').textContent;
+    obj[key] = isNaN(value) ? value : Number(value);
+  });
+  navigator.clipboard.writeText(JSON.stringify(obj, null, 2));
+  btn.textContent = 'Copied!';
+  setTimeout(() => btn.textContent = 'Copy JSON', 1500);
+}
 
-    async function callAPI(url, spinnerId) {
-      document.getElementById(spinnerId).innerHTML = '<span class="spinner"></span>';
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        return data;
-      } catch(e) {
-        return { error: 'Gagal memanggil API' };
-      } finally {
-        document.getElementById(spinnerId).innerHTML = '';
-      }
-    }
+async function callAPI(url, spinnerId) {
+  document.getElementById(spinnerId).innerHTML = '<span class="spinner"></span>';
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  } catch(e) {
+    return { error: 'Gagal memanggil API' };
+  } finally {
+    document.getElementById(spinnerId).innerHTML = '';
+  }
+}
 
-    async function testDownload() {
-      const url = document.getElementById("downloadUrl").value;
-      if(!url) return alert("Masukkan URL video!");
-      const data = await callAPI(`${baseURL}/download?url=${encodeURIComponent(url)}`, "downloadSpinner");
-      renderResponse('downloadResult', data);
-    }
+async function testDownload() {
+  const url = document.getElementById("downloadUrl").value;
+  if(!url) return alert("Masukkan URL video!");
+  const data = await callAPI(`${baseURL}/download?url=${encodeURIComponent(url)}`, "downloadSpinner");
+  renderResponse('downloadResult', data);
+}
 
-    async function testSearch() {
-      const query = document.getElementById("searchQuery").value;
-      if(!query) return alert("Masukkan keyword!");
-      const data = await callAPI(`${baseURL}/search?query=${encodeURIComponent(query)}`, "searchSpinner");
-      renderResponse('searchResult', data.results || data);
-    }
+async function testSearch() {
+  const query = document.getElementById("searchQuery").value;
+  if(!query) return alert("Masukkan keyword!");
+  const data = await callAPI(`${baseURL}/search?query=${encodeURIComponent(query)}`, "searchSpinner");
+  renderResponse('searchResult', data.results || data);
+}
 
-    async function testStalker() {
-      const username = document.getElementById("stalkerUsername").value;
-      if(!username) return alert("Masukkan username!");
-      const data = await callAPI(`${baseURL}/stalker?username=${encodeURIComponent(username)}`, "stalkerSpinner");
-      renderResponse('stalkerResult', data);
-    }
+async function testStalker() {
+  const username = document.getElementById("stalkerUsername").value;
+  if(!username) return alert("Masukkan username!");
+  const data = await callAPI(`${baseURL}/stalker?username=${encodeURIComponent(username)}`, "stalkerSpinner");
+  renderResponse('stalkerResult', data);
+}
 
-    async function testComments() {
-      const video_id = document.getElementById("commentsVideoId").value;
-      if(!video_id) return alert("Masukkan Video ID!");
-      const data = await callAPI(`${baseURL}/comments?video_id=${encodeURIComponent(video_id)}`, "commentsSpinner");
-      renderResponse('commentsResult', data.comments || data);
-    }
+async function testComments() {
+  const video_id = document.getElementById("commentsVideoId").value;
+  if(!video_id) return alert("Masukkan Video ID!");
+  const data = await callAPI(`${baseURL}/comments?video_id=${encodeURIComponent(video_id)}`, "commentsSpinner");
+  renderResponse('commentsResult', data.comments || data);
+}
 
-    async function testUserPosts() {
-      const username = document.getElementById("userPostsUsername").value;
-      if(!username) return alert("Masukkan username!");
-      const data = await callAPI(`${baseURL}/user-posts?username=${encodeURIComponent(username)}`, "userPostsSpinner");
-      renderResponse('userPostsResult', data.posts || data);
-    }
-  </script>
+async function testUserPosts() {
+  const username = document.getElementById("userPostsUsername").value;
+  if(!username) return alert("Masukkan username!");
+  const data = await callAPI(`${baseURL}/user-posts?username=${encodeURIComponent(username)}`, "userPostsSpinner");
+  renderResponse('userPostsResult', data.posts || data);
+}
+</script>
 </body>
-      </html>
+</html>
